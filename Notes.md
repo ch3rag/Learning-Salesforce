@@ -32,15 +32,48 @@
 * Boolean (True, False, NULL)
 ```apex
 Boolean flag = false;
+System.debug(flag);
 ```
 * String ("Hello World")
+```apex
+String greeting = 'Hello World!';
+System.debug(greeting);
+```
 * Integer (1, 123)
+```apex
+Integer age = 18;
+System.debug(age);
+```
 * Long (Long Integer 64 Bit)
+```apex
+Long reallyLongNumber = 123456789L;
+System.debug(reallyLongNumber);
+```
 * Decimal (Floats)
+```apex
+Decimal pi = 3.14;
+System.debug(pi);
+```
 * Double (Long Floats)
+```apex
+Double price = 1.67632456;
+System.debug(price);
+```
 * Date
+```apex
+Date tday = Date.newInstance(2023, 07, 05);
+System.debug(tday);
+```
 * Time
+```apex
+Time currentTime = Time.newInstance(11, 01, 0, 0);
+System.debug(currentTime);
+```
 * Datetime
+```apex
+DateTime currentDateTime = DateTime.newInstance(2023, 07, 05, 11, 01, 0);
+System.debug(currentDateTime);
+```
 * Blob (Binary Data: Images, Files)
 * ID (Record ID, Object ID, Metadata ID)
     1. 15 Digit ID: Case Sensitive ID
