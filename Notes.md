@@ -18,7 +18,7 @@
 * Apex can be used to interact with the objects(database tables) using __Salesforce Object Query Language__ or __SOQL__.
 * There are some declarative tools that can be used to interact with the salesforce objects such as:
     1. Workflow Rules
-    2. Process Builder
+    2. Process Builder: 
     3. Visual Flows
     4. Approval Process
-
+![Declarative Tools](images/declarative-tools.png)
