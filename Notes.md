@@ -6,8 +6,8 @@
 ### Architecture
 #### Front-End
 * Salesforce has two user interfaces:
- 1. Salesforce Classic UI
- 2. Salesforce Lightning UI
+    1. Salesforce Classic UI
+    2. Salesforce Lightning UI
 * Salesforce Classic UI is an old salesforce user interface which uses __VisualForce__ for the development.
 * Salesforce Lighting UI was introduced in 2014 and is more modern UI that uses either __Aura Component__ or __Lighting Web Component__ for front-end development.
 * Lightning Web Component is faster than Aura Component. Also, the Salesforce Classic UI is soon will be discontinued.
@@ -17,8 +17,8 @@
 * At the back-end, salesforce uses it's proprietary language called __Apex__ for development, which is similar to Java.
 * Apex can be used to interact with the objects(database tables) using __Salesforce Object Query Language__ or __SOQL__.
 * There are some declarative tools that can be used to interact with the salesforce objects such as:
- 1. Workflow Rules
- 2. Process Builder
- 3. Visual Flows
- 4. Approval Process
+    1. Workflow Rules
+    2. Process Builder
+    3. Visual Flows
+    4. Approval Process
 
