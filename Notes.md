@@ -282,3 +282,17 @@ System.debug(persons.containsKey(101));
 System.debug(persons.containsKey(105));
 // False
 ```
+---
+### Constants
+```apex
+// Constants Using Final
+final Decimal PI = 3.14159;
+// Can Be Assigned Later, But Only Once!
+final Decimal GRAVITY;
+GRAVITY = 9.8;
+// Print
+System.debug(PI);
+// 3.14159
+System.debug(GRAVITY);
+// 9.8
+```
