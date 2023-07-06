@@ -385,4 +385,37 @@ if (a > b) {
         System.debug('C');
     }
 }
+
+// Example
+// Leap Year Problem
+Integer year = 2200;
+
+if (Math.mod(year, 4) == 0) {
+    if (Math.mod(year, 100) == 0 && Math.mod(year, 400) != 0) {    
+    	System.debug('Not Leap Year');  
+    } else {
+    	System.debug('Leap Year');    
+    }
+} else {
+    System.debug('Not Leap Year');
+}
+```
+### Switch-When
+```apex
+// Switch-When
+Integer i = 12;
+switch on i {
+    when 2, 4, 6, 8 {
+        System.debug('Even');
+    }
+    when 1, 3, 5, 7, 9 {
+        System.debug('Odd');
+    }
+    When 0 {
+        System.debug('Zero');
+    }
+    When else {
+        System.debug('I don\'t know!');
+    }
+}
 ```
