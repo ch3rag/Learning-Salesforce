@@ -366,3 +366,23 @@ String scoreStr = '23';
 Integer score = Integer.valueOf(scoreStr) + 7;
 System.debug(score); // 30
 ```
+---
+### If-Else
+```apex
+// If-Else
+Integer a = 8, b = 9, c = 1;
+
+if (a > b) {
+    if (a > c) {
+        System.debug('A');
+    } else {
+        System.debug('C');
+    }
+} else {
+    if (b > c) {
+        System.debug('B');
+    } else {
+        System.debug('C');
+    }
+}
+```
