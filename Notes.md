@@ -88,3 +88,35 @@ __Note: If a value is not assigned, its NULL.__
 
 ---
 ### String Functions
+```apex
+String str = 'i am a string variable';
+System.debug('Actual String: ' + str);
+
+// Capitalize String
+System.debug('Capitalized String: ' + str.capitalize());
+
+// Contains
+System.debug('Contains ring?: ' + str.contains('ring'));
+
+// Convert To Uppercase
+System.debug('Upper Case: ' + str.toUpperCase());
+
+// Convert To Lowercase
+System.debug('Lower Case: ' + str.toLowerCase());
+
+// Equals & EqualsIgnoreCase
+System.debug('IsEqual to "ring"?: ' + str.equals('ring'));
+String name1 = 'Chirag';
+String name2 = 'chirag';
+System.debug('Name1 equals Name2?: ' + name1.equals(name2));
+System.debug('Name1 equals Name2?: ' + name1.equalsIgnoreCase(name2));
+
+// Remove
+System.debug('Remove "ring": ' + str.remove('ring'));
+
+// Replace
+System.debug('Replace "ring": ' + str.replace('ring', 'rong'));
+
+// Split
+System.debug('Split by Space: ' + str.split(' '));
+```
