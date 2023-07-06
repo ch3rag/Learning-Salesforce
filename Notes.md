@@ -87,7 +87,7 @@ System.debug(currentDateTime);
 __Note: If a value is not assigned, its NULL.__
 
 ---
-### String Functions
+### String Class
 ```apex
 String str = 'i am a string variable';
 System.debug('Actual String: ' + str);
@@ -130,4 +130,53 @@ System.debug('Replace "ring": ' + str.replace('ring', 'rong'));
 // Split
 System.debug('Split by Space: ' + str.split(' '));
 // Split by Space: (i, am, a, string, variable)
+
+// Escaping Characters
+string str2 = 'My name is \'chirag\'\nI am learning Salesforce!';
+System.debug(str2);
+// My name is 'chirag'
+// I am learning Salesforce!
+```
+---
+### Lists
+```apex
+// Declaration
+// Empty List
+List<Integer> emptyList = new List<Integer>();
+System.debug(emptyList);
+// ()
+
+// Populated List
+List<Integer> numbers = new List<Integer> {1, 2, 3, 4, 5};
+System.debug(numbers);
+// (1, 2, 3, 4, 5)
+
+// Appending/Inserting
+numbers.add(6);
+numbers.add(7);
+System.debug(numbers);
+// (1, 2, 3, 4, 5, 6, 7)
+
+numbers.add(1, 99);
+System.debug(numbers);
+// (1, 99, 2, 3, 4, 5, 6, 7)
+
+// Indexing
+System.debug(numbers[1]);
+System.debug(numbers.get(1));
+// 99
+
+// Size Of The List
+System.debug(numbers.size());
+// 8
+
+// Remove An Item
+numbers.remove(1);
+System.debug(numbers);
+// (1, 2, 3, 4, 5, 6, 7)
+
+// Remove All Items
+numbers.clear();
+System.debug(numbers);
+// ()
 ```
