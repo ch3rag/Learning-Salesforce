@@ -330,4 +330,31 @@ x -= 5; // 5
 x *= 5; // 25
 x /= 5; // 5
 
+// Boolean Operators
+Boolean a = true;
+Boolean b = false;
+
+System.debug(a && b); // False
+System.debug(a || b); // True
+System.debug(!a); // False
+
+// Equality Operators
+System.debug(a == b); // False
+System.debug(a == !b); // True
+System.debug('Hello' == 'Hello'); // True
+System.debug('Hello' == 'heLlO'); // True
+System.debug('Hello' == 'World'); // False
+
+// LT, GT, LTE, GTE
+System.debug(5 < 5); // False
+System.debug(5 <= 5); // True
+System.debug(6 > 5); // True
+System.debug(6 >= 5); // True
+
+// Ternary Operator
+Integer age = 19;
+Boolean isAdult = age > 18? true : false;
+System.debug('IsAdult?: ' + isAdult);
 ```
+
+__Note: == String comparison results in case insensitive character comparison (Hello == heLLo).__
