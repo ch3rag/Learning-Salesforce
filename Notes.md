@@ -3,6 +3,7 @@
 * Salesforce is CRM software.
 * It helps to stream-line the processes of customer acquisition, customer relationship management and interaction with company's current and potential customers.
 * It has various functional capabilities for complete CRM process such as Marketing, Sales & E-Commerce, Services, Community, Analytics, IoT & AI, Apps EcoSystem(AppExchange) and Support.
+---
 ### Architecture
 #### Front-End
 * Salesforce has two user interfaces:
@@ -26,8 +27,10 @@
 1. __Salesforce Setup__: Salesforce's internal code editor. Supports Apex Classes, Apex Triggers, VisualForce pages. Does not support Aura Component and Lightning Component.
 2. __Developer Console__: Better than Salesforce Setup. Can view logs, run test classes and anonymous code. 
 3. __VSCode__: Best code editor to salesforce out there.
+---
 ### HeapSize
 * There is hard limit that each Apex Program can have up to a Heap Size of 6MB. Exceeding this, can lead to error.
+---
 ### Data-Types
 * Boolean (True, False, NULL)
 ```apex
@@ -78,3 +81,8 @@ System.debug(currentDateTime);
 * ID (Record ID, Object ID, Metadata ID)
     1. 15 Digit ID: Case Sensitive ID
     2. 18 Digit ID: Case Insensitive ID
+
+__Note: If a value is not assigned, its NULL.__
+
+---
+### String Functions
