@@ -296,3 +296,38 @@ System.debug(PI);
 System.debug(GRAVITY);
 // 9.8
 ```
+### Operators
+```apex
+// Assignment Operator
+Integer x = 5;
+
+// Arithmetic Operators
+// Addition
+x = x + 5;
+System.debug(x); // 10
+
+// Subtraction
+x = x - 5;
+System.debug(x); // 5
+
+// Multiplication
+x = x * 5;
+System.debug(x); // 25
+
+// Division
+x = x / 5;
+System.debug(x); // 5
+
+// Increment And Decrement Operators
+x++;
+System.debug(x); // 6
+x--;
+System.debug(x); // 5
+
+// Addition, Multiplication, Subtraction, Division Assignment Operators
+x += 5; // 10
+x -= 5; // 5
+x *= 5; // 25
+x /= 5; // 5
+
+```
