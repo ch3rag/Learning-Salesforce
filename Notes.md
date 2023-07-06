@@ -138,7 +138,7 @@ System.debug(str2);
 // I am learning Salesforce!
 ```
 ---
-### Lists
+### Lists (Ordered List)
 ```apex
 // Declaration
 // Empty List
@@ -171,6 +171,7 @@ System.debug(numbers.size());
 // 8
 
 // Remove An Item
+// Remove Excepts An Index
 numbers.remove(1);
 System.debug(numbers);
 // (1, 2, 3, 4, 5, 6, 7)
@@ -185,4 +186,52 @@ System.debug(numbers);
 numbers.clear();
 System.debug(numbers);
 // ()
+```
+### Sets (Unordered Lists)
+```apex
+// Declaration
+// Empty Set
+Set<Integer> emptySet = new Set<Integer>();
+System.debug(emptySet);
+// {}
+
+// Populated List
+Set<Integer> numbers = new Set<Integer> {1, 2, 3, 4, 5};
+System.debug(numbers);
+// {1, 2, 3, 4, 5}
+
+// Adding Items To Set
+// Duplicate
+numbers.add(5);
+numbers.add(6);
+numbers.add(7);
+System.debug(numbers);
+// {1, 2, 3, 4, 5, 6, 7}
+
+// Check If Set Contains An Item
+System.debug(numbers.contains(7));
+// True
+System.debug(numbers.contains(-1));
+// False
+
+// Size Of The Set
+System.debug(numbers.size());
+// 7
+
+// Remove An Item
+// Remove Excepts An Item
+numbers.remove(1);
+System.debug(numbers);
+// {2, 3, 4, 5, 6, 7}
+
+// Check If The Set Is Empty
+System.debug(numbers.isEmpty());
+// False
+
+// Remove All Items
+numbers.clear();
+System.debug(numbers);
+// {}
+System.debug(numbers.isEmpty());
+// True
 ```
