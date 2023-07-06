@@ -354,7 +354,15 @@ System.debug(6 >= 5); // True
 // Ternary Operator
 Integer age = 19;
 Boolean isAdult = age > 18? true : false;
-System.debug('IsAdult?: ' + isAdult);
+System.debug('IsAdult?: ' + isAdult); // IsAdult?: True
 ```
-
 __Note: == String comparison results in case insensitive character comparison (Hello == heLLo).__
+
+---
+### Data-Type Conversion
+```apex
+// Each Primitive Has A ValueOf Method To Convert The Data Types
+String scoreStr = '23';
+Integer score = Integer.valueOf(scoreStr) + 7;
+System.debug(score); // 30
+```
