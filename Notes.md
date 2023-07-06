@@ -22,6 +22,7 @@
     2. Process Builder
     3. Visual Flows
     4. Approval Process
+
 ![Declarative Tools](images/declarative-tools.png)
 ---
 ### Code Editors
