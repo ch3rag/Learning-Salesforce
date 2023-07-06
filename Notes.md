@@ -91,32 +91,43 @@ __Note: If a value is not assigned, its NULL.__
 ```apex
 String str = 'i am a string variable';
 System.debug('Actual String: ' + str);
+//Actual String: i am a string variable
 
 // Capitalize String
 System.debug('Capitalized String: ' + str.capitalize());
+// Capitalized String: I am a string variable
 
 // Contains
 System.debug('Contains ring?: ' + str.contains('ring'));
+// Contains ring?: true
 
 // Convert To Uppercase
 System.debug('Upper Case: ' + str.toUpperCase());
+// Upper Case: I AM A STRING VARIABLE
 
 // Convert To Lowercase
 System.debug('Lower Case: ' + str.toLowerCase());
+// Lower Case: i am a string variable
 
 // Equals & EqualsIgnoreCase
 System.debug('IsEqual to "ring"?: ' + str.equals('ring'));
+// IsEqual to "ring"?: false
 String name1 = 'Chirag';
 String name2 = 'chirag';
 System.debug('Name1 equals Name2?: ' + name1.equals(name2));
+// Name1 equals Name2?: false
 System.debug('Name1 equals Name2?: ' + name1.equalsIgnoreCase(name2));
+// Name1 equals Name2?: true
 
 // Remove
 System.debug('Remove "ring": ' + str.remove('ring'));
+// Remove "ring": i am a st variable
 
 // Replace
 System.debug('Replace "ring": ' + str.replace('ring', 'rong'));
+// Replace "ring": i am a strong variable
 
 // Split
 System.debug('Split by Space: ' + str.split(' '));
+// Split by Space: (i, am, a, string, variable)
 ```
