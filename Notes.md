@@ -235,3 +235,50 @@ System.debug(numbers);
 System.debug(numbers.isEmpty());
 // True
 ```
+---
+### Maps (K-V Pairs)
+```apex
+// Maps Declaration
+Map<Integer, String> persons = new Map<Integer, String>();
+
+// Add New Item In The Map
+persons.put(101, 'Chirag');
+System.debug(persons);
+// {101=Chirag}
+
+persons.put(102, 'Alex');
+persons.put(103, 'Jane');
+persons.put(104, 'Smith');
+System.debug(persons);
+// {101=Chirag, 102=Alex, 103=Jane, 104=Smith}
+
+// Update Values
+persons.put(104, 'Ryan');
+System.debug(persons);
+// {101=Chirag, 102=Alex, 103=Jane, 104=Ryan}
+
+// Getting Values
+System.debug(persons.get(101));
+// Chirag
+
+// Removing Items From The Map
+persons.remove(104);
+System.debug(persons);
+// {101=Chirag, 102=Alex, 103=Jane}
+
+// Getting All The Keys As Set
+Set<Integer> personIds = persons.keySet();
+System.debug(personIds);
+// {101, 102, 103}
+
+// Getting All The Values In The Set As List
+List<String> personNames = persons.values();
+System.debug(personNames);
+// (Chirag, Alex, Jane)
+
+// Check If A Key Exists
+System.debug(persons.containsKey(101));
+// True
+System.debug(persons.containsKey(105));
+// False
+```
