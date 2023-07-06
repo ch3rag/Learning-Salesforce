@@ -175,6 +175,12 @@ numbers.remove(1);
 System.debug(numbers);
 // (1, 2, 3, 4, 5, 6, 7)
 
+// Update An Item
+numbers[0] = -1; 
+// OR numbers.set(0, -1);
+System.debug(numbers);
+// (-1, 2, 3, 4, 5, 6, 7)
+
 // Remove All Items
 numbers.clear();
 System.debug(numbers);
