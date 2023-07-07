@@ -468,3 +468,28 @@ while (year <= 2000) {
     year++;
 }
 ```
+### For Loop
+```apex
+// Printing All Leap Years Between 1100 And 2000 Inclusive
+Integer year = 1100;
+
+for (Integer year = 1100; year <= 2000; year++) {
+    if (Math.mod(year, 4) == 0) {
+        if (Math.mod(year, 100) == 0) {    
+            if (Math.mod(year, 400) == 0) {
+				System.debug(year);
+            }
+        } else {
+            System.debug(year);
+        }
+    }
+}
+```
+### For-Each Loop
+```apex
+List<Integer> numbers = new List<Integer> {101, 102, 103, 104, 105};
+    
+for (Integer num : numbers) {
+	System.debug(num);        
+}
+```
