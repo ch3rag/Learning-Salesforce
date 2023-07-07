@@ -34,7 +34,6 @@
 * There is hard limit that each Apex Program can have up to a Heap Size of 6MB. Exceeding this, can lead to an error.
 ---
 ## Apex Fundamentals
----
 ### Data-Types
 * Boolean (True, False, NULL)
 ```apex
@@ -497,4 +496,4 @@ for (Integer num : numbers) {
 ```
 ---
 ## Object Oriented Programming Using Apex
----
+
