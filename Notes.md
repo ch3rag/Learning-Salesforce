@@ -419,3 +419,21 @@ switch on i {
     }
 }
 ```
+### Do-While Loop
+```apex
+// Printing All Leap Years Between 1100 And 2000 Inclusive
+Integer year = 1100;
+
+do {
+    if (Math.mod(year, 4) == 0) {
+        if (Math.mod(year, 100) == 0) {    
+            if (Math.mod(year, 400) == 0) {
+				System.debug(year);
+            }
+        } else {
+            System.debug(year);
+        }
+    }
+    year++;
+} while(year <= 2000);
+```
