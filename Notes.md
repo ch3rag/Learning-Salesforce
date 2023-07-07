@@ -436,4 +436,35 @@ do {
     }
     year++;
 } while(year <= 2000);
+
+// Fizz Buzz Program
+Integer i = 0;
+do {
+    if (Math.mod(i, 3) == 0 && Math.mod(i, 5) == 0) {
+        System.debug('fizzbuzz');
+    } else if (Math.mod(i, 3) == 0) {
+        System.debug('fizz');
+    } else if (Math.mod(i, 5) == 0) {
+        System.debug('buzz');
+    }
+    i++;
+} while(i <= 100);
+```
+### While Loop
+```apex
+// Printing All Leap Years Between 1100 And 2000 Inclusive
+Integer year = 1100;
+
+while (year <= 2000) {
+    if (Math.mod(year, 4) == 0) {
+        if (Math.mod(year, 100) == 0) {    
+            if (Math.mod(year, 400) == 0) {
+				System.debug(year);
+            }
+        } else {
+            System.debug(year);
+        }
+    }
+    year++;
+}
 ```
