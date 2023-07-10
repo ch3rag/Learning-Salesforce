@@ -34,6 +34,10 @@
 * There is hard limit that each Apex Program can have up to a Heap Size of 6MB. Exceeding this, can lead to an error.
 ---
 ## Apex Fundamentals
+
+__Note: Apex is a case-insensitive language.__
+* Variables cannot start and end using an underscore.
+
 ### Data-Types
 * Boolean (True, False, NULL)
 ```apex
@@ -496,4 +500,60 @@ for (Integer num : numbers) {
 ```
 ---
 ## Object Oriented Programming Using Apex
+* Private is the default access modifier.
+* Other than public, private and protected there is also __global__ modifier. Global members can be accessed across multiple namespaces.
+* First static initialization blocks are called, followed by normal initialization blocks and finally the constructors.
+---
+## Apex Unit Testing
+* Test classes and method are adorned with @isTest annotations.
+* A test method must be static and void and can only be either public and protected.
+```apex
+public class Covid19 {
+	private Integer recoveredInArea = 0;
+    public static Integer recoveredInCountry = 0;
+    
+    public Covid19(Integer recoveredInArea) {
+        if (recoveredInArea < 0) {
+            recoveredInArea = 0;
+        }
+        this.recoveredInArea = recoveredInArea;
+        recoveredInCountry += recoveredInArea;
+    }
+    
+    public void treatPatient() {
+        recoveredInArea++;
+        recoveredInCountry++;
+    }
+    
+    public Integer getTreated() {
+        return recoveredInArea;
+    }
+}
 
+// Test Class
+@isTest
+public class Covid19Test {
+    
+    @isTest
+    public static void treatPatientTest() {
+        Covid19 jaipur = new Covid19(10);
+        System.assertEquals(10, jaipur.getTreated(), 'Treated count does not match');
+        
+        Covid19 hyd = new Covid19(112);
+        System.assertEquals(112, hyd.getTreated(), 'Treated count does not match');
+        
+        // Check Recovered In Country
+        System.assertEquals(122, Covid19.recoveredInCountry, 'Treated count does not match');
+        
+        jaipur.treatPatient();
+        System.assert(11 == jaipur.getTreated());
+        System.assert(123 == Covid19.recoveredInCountry);
+    }
+    
+    @isTest
+    public static void treatPatientTestNegative() {
+    	Covid19 jaipur = new Covid19(-1);
+        System.assertEquals(0, jaipur.getTreated());
+    }
+}
+```
