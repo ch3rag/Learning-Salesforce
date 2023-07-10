@@ -640,4 +640,36 @@ for (Contact contact : contacts) {
         System.debug('Case Number: ' + caseObj.CaseNumber + ', Case Subject: ' + caseObj.Subject);
     }
 }
+
+// Binding Variables
+List <String> accountNames = new List <String>();
+
+accountNames.add('New Line Cinema');
+accountNames.add('Sample SObject Account');
+accountNames.add('Burlington Textiles Corp of America');
+accountNames.add('sForce');
+
+List <Account> accounts = [SELECT Id, Name, Rating FROM Account
+                           WHERE Name IN :accountNames];
+
+System.debug('Account Size: ' + accounts.size());
+System.debug('Accounts: ' + accounts);
+
+// Dynamic SOQL Construction
+String accountClass = 'Class3';
+
+String queryString = 'SELECT Id, Name, Phone, Rating FROM Account';
+
+if (accountClass == 'Class1') {
+    queryString += ' WHERE Rating = \'Hot\' AND Type = \'Prospect\'';
+} else if (accountClass == 'Class2') {
+    queryString += ' WHERE Rating = \'Warm\' AND Type = \'Other\'';
+} else {
+    queryString += ' WHERE Rating = \'Hot\'';
+}
+
+List <Account> accounts = Database.query(queryString);
+
+System.debug('Accounts: ' + accounts);
+System.debug('Accounts Size: ' + accounts.size());
 ```
