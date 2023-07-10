@@ -608,4 +608,36 @@ SELECT Name, Department, Title, Phone, Email FROM Contact WHERE Title LIKE '%VP%
 -- 1. Only One Level Deep Relationship Is Supported
 -- 2. Up to 20 Related Objects Are Supported. Below Query Uses 2 Related Objects (Contact, Opportunity)
 SELECT Name, Phone, Website, (SELECT Name, Department FROM Contacts WHERE Department = 'Finance'), (SELECT Name, Amount FROM Opportunities) FROM Account
+
+-- Child Parent Relationship
+-- Up To 5 Level Deep Supported
+-- Up To 55 Related Objects Are Supported
+SELECT Name, Phone, Department, Account.Name, Account.Website, Account.Owner.Name FROM Contact
+
+SELECT Account.Name, Account.Rating, Name, Department, Title, (SELECT CaseNumber, Subject FROM Cases WHERE IsClosed = False) FROM Contact Where Account.Rating = 'Hot' AND Department = 'Technology' ORDER BY Name
+```
+## Apex & SOQL
+```apex
+List<Account> accounts = [SELECT Name, Phone FROM Account];
+
+
+for (Account account : accounts) {
+    System.debug('Account Name: ' + account.Name + ', Account Phone: ' + account.Phone);
+}
+
+Map<Id, Account> accountsMap = new Map<Id, Account>([SELECT Name, Phone FROM Account]);
+
+for (Account account : accountsMap.values()) {
+    System.debug('Account Name: ' + account.Name + ', Account Phone: ' + account.Phone);
+}
+
+// SOQL For Relationships
+List<Contact> contacts = [SELECT Account.Name, Account.Rating, Name, Department, Title, (SELECT CaseNumber, Subject FROM Cases) FROM Contact ORDER BY Name];
+
+for (Contact contact : contacts) {
+    System.debug('Contact Name: ' + contact.Name + ', Contact Department: ' + contact.Department + ', Contact Title: ' + contact.Title + ', Account Name: ' + contact.Account.Name + ', Account Rating: ' + contact.Account.Rating);
+    for (Case caseObj : contact.Cases) {
+        System.debug('Case Number: ' + caseObj.CaseNumber + ', Case Subject: ' + caseObj.Subject);
+    }
+}
 ```
