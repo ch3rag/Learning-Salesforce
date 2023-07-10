@@ -557,3 +557,51 @@ public class Covid19Test {
     }
 }
 ```
+---
+## SOQL
+```SQL
+-- Sample Queries
+-- AND, OR
+SELECT Name, Company, Email, Status FROM Lead WHERE Status = 'Closed - Converted' OR Status = 'Closed - Not Converted'
+
+SELECT Name, Company, Email, Status FROM Lead WHERE (Status = 'Closed - Converted' OR Status = 'Closed - Not Converted') AND LeadSource = 'Web'
+
+-- IN
+SELECT Name, Company, Email, Status FROM Lead WHERE Status IN ('Closed - Converted', 'Closed - Not Converted') AND LeadSource = 'Web'
+
+-- LIKE
+SELECT Name, Company, Email, Status FROM Lead WHERE Status LIKE 'Closed - %' AND LeadSource = 'Web'
+
+-- ORDER BY
+SELECT Name, Status, CreatedDate, LeadSource, Company, Email FROM Lead ORDER BY CreatedDate DESC
+
+-- LIMIT (Getting Last Created)
+SELECT Name, Status, CreatedDate, LeadSource, Company, Email FROM Lead ORDER BY CreatedDate  DESC LIMIT 1
+
+-- OFFSET (Getting Second Last For Example)
+SELECT Name, Status, CreatedDate, LeadSource, Company, Email FROM Lead ORDER BY CreatedDate  DESC LIMIT 5 OFFSET 5
+
+SELECT Name, Status, CreatedDate, LeadSource, Company, Email FROM Lead ORDER BY CreatedDate  DESC LIMIT 1 OFFSET 1
+
+-- DATE TIME FORMATS
+-- Date: YYYY-MM-DD
+-- DateTime: 
+-- YYYY-MM-DDThh:mm:ss+hh:mm
+-- YYYY-MM-DDThh:mm:ss-hh:mm
+-- YYYY-MM-DDThh:mm:ssZ
+-- SQL Also Supports TODAY, YESTERDAY & TOMORROW Literals. 
+-- Other Literals: LAST_WEEK, LAST_YEAR, NEXT_MONTH, NEXT_QUARTER, LAST_N_DAYS:n, LAST_N_YEAR:n, NEXT_N_WEEKS:n, LAST_90_DAYS, NEXT_90_DAYS, etc.
+
+SELECT Name, Status, CreatedDate, LeadSource, Company, Email FROM Lead WHERE CreatedDate > 2023-07-10T00:00:00+0000
+
+SELECT Name, Status, CreatedDate, LeadSource, Company, Email FROM Lead WHERE CreatedDate = TODAY
+
+SELECT Name, Status, CreatedDate, LeadSource, Company, Email FROM Lead WHERE CreatedDate > YESTERDAY
+
+SELECT Name, Status, CreatedDate, LeadSource, Company, Email FROM Lead WHERE CreatedDate = LAST_N_DAYS:4
+
+-- Challenges
+SELECT Name, Department, Title, Phone, Email FROM Contact WHERE Title LIKE '%VP%' AND Department = 'Finance' ORDER BY Name DESC LIMIT 3
+
+
+```
