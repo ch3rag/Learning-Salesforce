@@ -603,5 +603,9 @@ SELECT Name, Status, CreatedDate, LeadSource, Company, Email FROM Lead WHERE Cre
 -- Challenges
 SELECT Name, Department, Title, Phone, Email FROM Contact WHERE Title LIKE '%VP%' AND Department = 'Finance' ORDER BY Name DESC LIMIT 3
 
-
+-- Parent Child Relationship
+-- Limitations:
+-- 1. Only One Level Deep Relationship Is Supported
+-- 2. Up to 20 Related Objects Are Supported. Below Query Uses 2 Related Objects (Contact, Opportunity)
+SELECT Name, Phone, Website, (SELECT Name, Department FROM Contacts WHERE Department = 'Finance'), (SELECT Name, Amount FROM Opportunities) FROM Account
 ```
