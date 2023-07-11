@@ -673,3 +673,43 @@ List <Account> accounts = Database.query(queryString);
 System.debug('Accounts: ' + accounts);
 System.debug('Accounts Size: ' + accounts.size());
 ```
+---
+## DML & SObject
+```apex
+Account account = new Account(Name = 'Chirag Software Company', Phone = '(+91) 6391199773');
+account.Rating = 'Hot';
+// Insert Single Account
+// insert account;
+
+List<Account> accounts = new List<Account> {
+    new Account(Name = 'TCS', Phone = '9988776655', Rating = 'Warm'),
+    new Account(Name = 'HCL', Phone = '9988776677', Rating = 'Cold'),    
+    new Account(Name = 'InfoSys', Phone = '9988998899', Rating = 'Hot'),
+   	account,
+    // Invalid Account
+    new Account()
+};
+
+// Insert Accounts
+// insert accounts;
+// OR
+Database.SaveResult[] saveResults = Database.insert(accounts, false);
+
+for (Database.SaveResult saveResult : saveResults) {
+    if (saveResult.isSuccess()) {
+        System.debug('Row With Id: ' + saveResult.getId() + ' Successfully Inserted.');
+    } else {
+        for (Database.Error error : saveResult.getErrors()) {
+            System.debug(error.getStatusCode() + ': ' + error.getMessage());
+        }
+    }
+}
+
+// Difference
+// Insert Will Either Add All Objects Or None If Any Object Is Invalid
+// This Behavior Can Be Controlled Using Database.insert(objects, allOrNone)
+// Set AllOrNone = False To Allow Valid Objects To Insert And Disregard Invalid Objects
+// Also Database.insert() Returns Result Representing Rows Which Were Successfully Inserted
+
+
+```
