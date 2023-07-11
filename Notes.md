@@ -675,6 +675,7 @@ System.debug('Accounts Size: ' + accounts.size());
 ```
 ---
 ## DML & SObject
+### Insert Operation
 ```apex
 Account account = new Account(Name = 'Chirag Software Company', Phone = '(+91) 6391199773');
 account.Rating = 'Hot';
@@ -741,4 +742,63 @@ public class AccountController {
         return getAllAccounts().size();
     }
 }
+```
+### Update Operation
+```apex
+Account account = new Account(Name = 'TCS', Phone = '9988776655');
+AccountController.insertAccount(account);
+
+List<Account> accounts = [SELECT Id, Name, Phone FROM Account WHERE Name = 'TCS' AND Phone = '9988776655'];
+for (Account account : accounts) {
+    account.Name = 'Tata Consultancy Services';
+    account.Rating = 'Hot';
+}
+// Update All Accounts In List
+update accounts;
+// OR
+// Database.update(accounts, true);
+```
+### Delete Operation
+```apex
+// Delete Operation
+List<Account> accounts = [SELECT Id FROM Account WHERE Name = 'Tata Consultancy Services'];
+delete accounts;
+// OR
+// Database.delete(account);
+```
+### Un-Delete Operation
+```apex
+// Get Deleted Rows
+List<Account> deletedAccounts = [SELECT Id, Name, Phone FROM Account WHERE isDeleted = true AND Name = 'Tata Consultancy Services' LIMIT 1 OFFSET 1 ALL ROWS];
+System.debug(deletedAccounts);
+// Undelete Accounts
+undelete deletedAccounts;
+```
+### SObjects (Parent Class Of All Objects)
+```apex
+List<SObject> accounts = [SELECT Id, Name, Phone FROM Account];
+
+for (SObject account : accounts) {
+    System.debug('Account Name: ' + (String)account.get('Name') + ', Account Phone: ' + (String)account.get('Phone'));
+}
+
+List<SObject> contacts = [SELECT Name, Email, Account.Name FROM Contact];
+// Access Parent From Child
+// Using SObject.getSObject('Parent Relationship').get('Field')
+for (SObject contact : contacts) {
+    System.debug('Contact Name: ' + contact.get('Name') + ', Contact Email: ' + contact.get('Email') + ', Account Name: ' + contact.getSObject('Account').get('Name'));
+}
+
+// Access Child From Parent
+List<SObject> accounts = [SELECT Name, Website, (SELECT Name, Email FROM Contacts) FROM Account];
+for (SObject account : accounts) {
+    System.debug('Account Name: ' + account.get('Name') + ', Account Website: ' + account.get('Website'));
+    SObject[] contacts = account.getSObjects('Contacts');
+    if (contacts != null) {
+    	for (SObject contact : contacts) {
+        	System.debug('Contact Name: ' + contact.get('Name') + ', Contact Email: ' + contact.get('Email'));
+    	}
+    }
+}
+
 ```
