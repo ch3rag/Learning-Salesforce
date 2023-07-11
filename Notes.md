@@ -685,7 +685,7 @@ List<Account> accounts = new List<Account> {
     new Account(Name = 'TCS', Phone = '9988776655', Rating = 'Warm'),
     new Account(Name = 'HCL', Phone = '9988776677', Rating = 'Cold'),    
     new Account(Name = 'InfoSys', Phone = '9988998899', Rating = 'Hot'),
-   	account,
+    account,
     // Invalid Account
     new Account()
 };
@@ -710,6 +710,35 @@ for (Database.SaveResult saveResult : saveResults) {
 // This Behavior Can Be Controlled Using Database.insert(objects, allOrNone)
 // Set AllOrNone = False To Allow Valid Objects To Insert And Disregard Invalid Objects
 // Also Database.insert() Returns Result Representing Rows Which Were Successfully Inserted
-
-
+```
+### Simple Account Controller
+```apex
+public class AccountController {
+    public static List<Account> insertAccounts(List<Account> accounts) {
+        insert accounts;
+        return accounts;
+    }
+    
+    public static Account insertAccount(Account account) {
+        insert account;
+        return account;
+    }
+    
+    public static List<Account> getAllAccounts() {
+        List<Account> accounts = [SELECT Name, Phone FROM Account];
+        return accounts;
+    }
+    
+    public static void printAllAccounts() {
+        List<Account> accounts = getAllAccounts();
+        
+        for (Account account : accounts) {
+        	System.debug('Account Name: ' + account.Name + ', Account Phone: ' + account.Phone);   
+        }
+    }
+    
+    public static Integer getAccountSize() {
+        return getAllAccounts().size();
+    }
+}
 ```
