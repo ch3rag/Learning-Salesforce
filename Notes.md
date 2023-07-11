@@ -891,3 +891,18 @@ System.debug(opportunityIds);
 
 OpportunityController.updateProfile(opportunityIds);
 ```
+### Avoid Hitting Limits By Monitoring Current Usage
+```apex
+// Avoid Governor Limits
+List <Account> accounts = [SELECT Id, Type, Name, ParentId FROM Account];
+
+while (true) {
+	if (Limits.getHeapSize() * 2 >= Limits.getLimitHeapSize()) {
+		break;
+	}
+	List<Account> duplicateAccounts = accounts;
+	accounts.addAll(duplicateAccounts);
+}
+
+System.debug(accounts.size());
+```
