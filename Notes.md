@@ -801,4 +801,12 @@ for (SObject account : accounts) {
     }
 }
 
+// Create New SObject Instance
+SObject account = (SObject)Type.forName('Account').newInstance();
+
+// Put Fields
+account.put('Name', 'Chirag Gaming Company');
+account.put('Phone', '9988776677');
+
+insert account;
 ```
