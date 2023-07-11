@@ -852,8 +852,9 @@ update opportunity;
 // Undelete
 // Opportunity deletedOp = [SELECT Id FROM Opportunity WHERE Name = 'Lord Of The Rings' AND isDeleted = true LIMIT 1 OFFSET 1 ALL ROWS];
 // undelete deletedOp;
+
+// SELECT Id, Name, Account.Name, StageName, CloseDate FROM Opportunity
+
+// SELECT Id, Name, Rating FROM Account
 ```
 
-SELECT Id, Name, Account.Name, StageName, CloseDate FROM Opportunity
-
-SELECT Id, Name, Rating FROM Account
