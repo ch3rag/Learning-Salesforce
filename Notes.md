@@ -906,3 +906,28 @@ while (true) {
 
 System.debug(accounts.size());
 ```
+### Challenges
+```apex
+public static void updateAvgCaseResolutionDays(List<Id> accountIds) {
+	// Get All Accounts And Associated Cases Using Parent Child Relationship Query
+	List<Account> accounts = [SELECT Id, (SELECT CreatedDate, ClosedDate FROM Cases WHERE IsClosed = true) FROM Account WHERE Id IN :accountIds AND Id IN (SELECT AccountId FROM Case)];
+	// For Each Account
+	for (Account account : accounts) {
+		Integer totalCases = 0, totalDays = 0;
+		// For All Cases In Each Account Calculate Total Cases And TotalDays
+		for (Case caseObj : account.Cases) {
+			totalCases++;
+			totalDays += caseObj.CreatedDate.date().daysBetween(caseObj.ClosedDate.date());
+		}
+		// Find Average
+		Decimal resolutionDays;
+		if (totalCases > 0) {
+			resolutionDays = totalDays / totalCases;
+		}
+		// Update Average Case Resolution Days Field Of The Account
+		account.Avg_Case_Resolution_Days__c = resolutionDays;
+	}
+	// Commit The Changes In Database
+	update accounts;
+}
+```
