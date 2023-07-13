@@ -931,3 +931,13 @@ public static void updateAvgCaseResolutionDays(List<Id> accountIds) {
 	update accounts;
 }
 ```
+### More SOQL
+```sql
+-- Aggregate Functions
+SELECT COUNT() FROM Account
+SELECT MAX(Amount) FROM Opportunity
+SELECT AVG(Amount) FROM Opportunity
+SELECT MIN(Amount) FROM Opportunity
+SELECT SUM(Amount) FROM Opportunity
+SELECT COUNT_DISTINCT(Name) FROM Account
+```
