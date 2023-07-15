@@ -961,11 +961,15 @@ for (AggregateResult result : results) {
 ---
 ## Apex Triggers
 ```apex
-trigger LeadTrigger on Lead (before insert) {
-	// System.debug('Lead Trigger Called.');
+trigger LeadTrigger on Lead (before insert, before update) {
+    // System.debug('Lead Trigger Called.');
     for (Lead leadRecord : Trigger.new) {
         if (String.isBlank(leadRecord.LeadSource)) {
-        	leadRecord.LeadSource = 'Other';
+            leadRecord.LeadSource = 'Other';
+        }
+        
+        if (String.isBlank(leadRecord.Industry)) {
+            leadRecord.addError('The industry field cannot be blank');
         }
     }
 }
@@ -975,4 +979,12 @@ trigger LeadTrigger on Lead (before insert) {
 	2. Before And After Delete
 	3. Before And After Update
 	3. After Undelete
-
+* In case of multiple triggers, execution sequence is not guaranteed.
+* The best practice is to have one trigger per SObject.
+* Trigger Context Variables:
+	1. isInsert - True if trigger was fired due to insert operation.
+	2. isUpdate - True if trigger was fired due to update operation.
+	3. isDelete - True if trigger was fired due to delete operation.
+	4. isUndelete - True if trigger was fired due to undelete operation.
+	5. isBefore - True if trigger was fired before an operation.
+	6. isAfter - True if trigger was fired after an operation.
