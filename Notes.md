@@ -992,3 +992,6 @@ trigger LeadTrigger on Lead (before insert, before update) {
 	8. old - List of old versions of the record.
 	9. newMap - Map of Id-SObject of new versions of the record.
 	10. oldMap - Map of Id-SObject of old versions of the record.
+	11. isExecuting - Return true if current context of apex code is a trigger.
+	12. size - total number of records in trigger invocation (both new and old).
+	13. operationType - Enum corresponding to current operation (BEFORE_UPDATE, AFTER_DELETE, etc).
