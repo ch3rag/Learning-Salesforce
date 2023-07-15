@@ -7,8 +7,8 @@
 ### Architecture
 #### Front-End
 * Salesforce has two user interfaces:
-    1. Salesforce Classic UI
-    2. Salesforce Lightning UI
+	1. Salesforce Classic UI
+	2. Salesforce Lightning UI
 * Salesforce Classic UI is an old salesforce user interface which uses __VisualForce__ Pages.
 * Salesforce Lighting UI was introduced in 2014 and is more modern UI that uses either __Aura Component__ or __Lighting Web Component__ for front-end development.
 * Lightning Web Component is faster than Aura Component. Also, the Salesforce Classic UI is soon will be discontinued.
@@ -18,10 +18,10 @@
 * At the back-end, salesforce uses it's proprietary language called __Apex__ for development, which is similar to Java.
 * Apex can be used to interact with the objects(database tables) using __Salesforce Object Query Language__ or __SOQL__.
 * There are some declarative tools that can be used to interact with the salesforce objects such as:
-    1. Workflow Rules
-    2. Process Builder
-    3. Visual Flows
-    4. Approval Process
+	1. Workflow Rules
+	2. Process Builder
+	3. Visual Flows
+	4. Approval Process
 
 ![Declarative Tools](images/declarative-tools.png)
 ---
@@ -86,8 +86,8 @@ System.debug(currentDateTime);
 ```
 * Blob (Binary Data: Images, Files)
 * ID (Record ID, Object ID, Metadata ID)
-    1. 15 Digit ID: Case Sensitive ID
-    2. 18 Digit ID: Case Insensitive ID
+	1. 15 Digit ID: Case Sensitive ID
+	2. 18 Digit ID: Case Insensitive ID
 
 __Note: If a value is not assigned, its NULL.__
 
@@ -378,17 +378,17 @@ System.debug(score); // 30
 Integer a = 8, b = 9, c = 1;
 
 if (a > b) {
-    if (a > c) {
-        System.debug('A');
-    } else {
-        System.debug('C');
-    }
+	if (a > c) {
+		System.debug('A');
+	} else {
+		System.debug('C');
+	}
 } else {
-    if (b > c) {
-        System.debug('B');
-    } else {
-        System.debug('C');
-    }
+	if (b > c) {
+		System.debug('B');
+	} else {
+		System.debug('C');
+	}
 }
 
 // Example
@@ -396,13 +396,13 @@ if (a > b) {
 Integer year = 2200;
 
 if (Math.mod(year, 4) == 0) {
-    if (Math.mod(year, 100) == 0 && Math.mod(year, 400) != 0) {    
-    	System.debug('Not Leap Year');  
-    } else {
-    	System.debug('Leap Year');    
-    }
+	if (Math.mod(year, 100) == 0 && Math.mod(year, 400) != 0) {    
+		System.debug('Not Leap Year');  
+	} else {
+		System.debug('Leap Year');    
+	}
 } else {
-    System.debug('Not Leap Year');
+	System.debug('Not Leap Year');
 }
 ```
 ### Switch-When
@@ -410,18 +410,18 @@ if (Math.mod(year, 4) == 0) {
 // Switch-When
 Integer i = 12;
 switch on i {
-    when 2, 4, 6, 8 {
-        System.debug('Even');
-    }
-    when 1, 3, 5, 7, 9 {
-        System.debug('Odd');
-    }
-    When 0 {
-        System.debug('Zero');
-    }
-    When else {
-        System.debug('I don\'t know!');
-    }
+	when 2, 4, 6, 8 {
+		System.debug('Even');
+	}
+	when 1, 3, 5, 7, 9 {
+		System.debug('Odd');
+	}
+	When 0 {
+		System.debug('Zero');
+	}
+	When else {
+		System.debug('I don\'t know!');
+	}
 }
 ```
 ### Do-While Loop
@@ -430,29 +430,29 @@ switch on i {
 Integer year = 1100;
 
 do {
-    if (Math.mod(year, 4) == 0) {
-        if (Math.mod(year, 100) == 0) {    
-            if (Math.mod(year, 400) == 0) {
+	if (Math.mod(year, 4) == 0) {
+		if (Math.mod(year, 100) == 0) {    
+			if (Math.mod(year, 400) == 0) {
 				System.debug(year);
-            }
-        } else {
-            System.debug(year);
-        }
-    }
-    year++;
+			}
+		} else {
+			System.debug(year);
+		}
+	}
+	year++;
 } while(year <= 2000);
 
 // Fizz Buzz Program
 Integer i = 0;
 do {
-    if (Math.mod(i, 3) == 0 && Math.mod(i, 5) == 0) {
-        System.debug('fizzbuzz');
-    } else if (Math.mod(i, 3) == 0) {
-        System.debug('fizz');
-    } else if (Math.mod(i, 5) == 0) {
-        System.debug('buzz');
-    }
-    i++;
+	if (Math.mod(i, 3) == 0 && Math.mod(i, 5) == 0) {
+		System.debug('fizzbuzz');
+	} else if (Math.mod(i, 3) == 0) {
+		System.debug('fizz');
+	} else if (Math.mod(i, 5) == 0) {
+		System.debug('buzz');
+	}
+	i++;
 } while(i <= 100);
 ```
 ### While Loop
@@ -461,16 +461,16 @@ do {
 Integer year = 1100;
 
 while (year <= 2000) {
-    if (Math.mod(year, 4) == 0) {
-        if (Math.mod(year, 100) == 0) {    
-            if (Math.mod(year, 400) == 0) {
+	if (Math.mod(year, 4) == 0) {
+		if (Math.mod(year, 100) == 0) {    
+			if (Math.mod(year, 400) == 0) {
 				System.debug(year);
-            }
-        } else {
-            System.debug(year);
-        }
-    }
-    year++;
+			}
+		} else {
+			System.debug(year);
+		}
+	}
+	year++;
 }
 ```
 ### For Loop
@@ -479,21 +479,21 @@ while (year <= 2000) {
 Integer year = 1100;
 
 for (Integer year = 1100; year <= 2000; year++) {
-    if (Math.mod(year, 4) == 0) {
-        if (Math.mod(year, 100) == 0) {    
-            if (Math.mod(year, 400) == 0) {
+	if (Math.mod(year, 4) == 0) {
+		if (Math.mod(year, 100) == 0) {    
+			if (Math.mod(year, 400) == 0) {
 				System.debug(year);
-            }
-        } else {
-            System.debug(year);
-        }
-    }
+			}
+		} else {
+			System.debug(year);
+		}
+	}
 }
 ```
 ### For-Each Loop
 ```apex
 List<Integer> numbers = new List<Integer> {101, 102, 103, 104, 105};
-    
+	
 for (Integer num : numbers) {
 	System.debug(num);        
 }
@@ -510,51 +510,51 @@ for (Integer num : numbers) {
 ```apex
 public class Covid19 {
 	private Integer recoveredInArea = 0;
-    public static Integer recoveredInCountry = 0;
-    
-    public Covid19(Integer recoveredInArea) {
-        if (recoveredInArea < 0) {
-            recoveredInArea = 0;
-        }
-        this.recoveredInArea = recoveredInArea;
-        recoveredInCountry += recoveredInArea;
-    }
-    
-    public void treatPatient() {
-        recoveredInArea++;
-        recoveredInCountry++;
-    }
-    
-    public Integer getTreated() {
-        return recoveredInArea;
-    }
+	public static Integer recoveredInCountry = 0;
+	
+	public Covid19(Integer recoveredInArea) {
+		if (recoveredInArea < 0) {
+			recoveredInArea = 0;
+		}
+		this.recoveredInArea = recoveredInArea;
+		recoveredInCountry += recoveredInArea;
+	}
+	
+	public void treatPatient() {
+		recoveredInArea++;
+		recoveredInCountry++;
+	}
+	
+	public Integer getTreated() {
+		return recoveredInArea;
+	}
 }
 
 // Test Class
 @isTest
 public class Covid19Test {
-    
-    @isTest
-    public static void treatPatientTest() {
-        Covid19 jaipur = new Covid19(10);
-        System.assertEquals(10, jaipur.getTreated(), 'Treated count does not match');
-        
-        Covid19 hyd = new Covid19(112);
-        System.assertEquals(112, hyd.getTreated(), 'Treated count does not match');
-        
-        // Check Recovered In Country
-        System.assertEquals(122, Covid19.recoveredInCountry, 'Treated count does not match');
-        
-        jaipur.treatPatient();
-        System.assert(11 == jaipur.getTreated());
-        System.assert(123 == Covid19.recoveredInCountry);
-    }
-    
-    @isTest
-    public static void treatPatientTestNegative() {
-    	Covid19 jaipur = new Covid19(-1);
-        System.assertEquals(0, jaipur.getTreated());
-    }
+	
+	@isTest
+	public static void treatPatientTest() {
+		Covid19 jaipur = new Covid19(10);
+		System.assertEquals(10, jaipur.getTreated(), 'Treated count does not match');
+		
+		Covid19 hyd = new Covid19(112);
+		System.assertEquals(112, hyd.getTreated(), 'Treated count does not match');
+		
+		// Check Recovered In Country
+		System.assertEquals(122, Covid19.recoveredInCountry, 'Treated count does not match');
+		
+		jaipur.treatPatient();
+		System.assert(11 == jaipur.getTreated());
+		System.assert(123 == Covid19.recoveredInCountry);
+	}
+	
+	@isTest
+	public static void treatPatientTestNegative() {
+		Covid19 jaipur = new Covid19(-1);
+		System.assertEquals(0, jaipur.getTreated());
+	}
 }
 ```
 ---
@@ -622,23 +622,23 @@ List<Account> accounts = [SELECT Name, Phone FROM Account];
 
 
 for (Account account : accounts) {
-    System.debug('Account Name: ' + account.Name + ', Account Phone: ' + account.Phone);
+	System.debug('Account Name: ' + account.Name + ', Account Phone: ' + account.Phone);
 }
 
 Map<Id, Account> accountsMap = new Map<Id, Account>([SELECT Name, Phone FROM Account]);
 
 for (Account account : accountsMap.values()) {
-    System.debug('Account Name: ' + account.Name + ', Account Phone: ' + account.Phone);
+	System.debug('Account Name: ' + account.Name + ', Account Phone: ' + account.Phone);
 }
 
 // SOQL For Relationships
 List<Contact> contacts = [SELECT Account.Name, Account.Rating, Name, Department, Title, (SELECT CaseNumber, Subject FROM Cases) FROM Contact ORDER BY Name];
 
 for (Contact contact : contacts) {
-    System.debug('Contact Name: ' + contact.Name + ', Contact Department: ' + contact.Department + ', Contact Title: ' + contact.Title + ', Account Name: ' + contact.Account.Name + ', Account Rating: ' + contact.Account.Rating);
-    for (Case caseObj : contact.Cases) {
-        System.debug('Case Number: ' + caseObj.CaseNumber + ', Case Subject: ' + caseObj.Subject);
-    }
+	System.debug('Contact Name: ' + contact.Name + ', Contact Department: ' + contact.Department + ', Contact Title: ' + contact.Title + ', Account Name: ' + contact.Account.Name + ', Account Rating: ' + contact.Account.Rating);
+	for (Case caseObj : contact.Cases) {
+		System.debug('Case Number: ' + caseObj.CaseNumber + ', Case Subject: ' + caseObj.Subject);
+	}
 }
 
 // Binding Variables
@@ -650,7 +650,7 @@ accountNames.add('Burlington Textiles Corp of America');
 accountNames.add('sForce');
 
 List <Account> accounts = [SELECT Id, Name, Rating FROM Account
-                           WHERE Name IN :accountNames];
+						   WHERE Name IN :accountNames];
 
 System.debug('Account Size: ' + accounts.size());
 System.debug('Accounts: ' + accounts);
@@ -661,11 +661,11 @@ String accountClass = 'Class3';
 String queryString = 'SELECT Id, Name, Phone, Rating FROM Account';
 
 if (accountClass == 'Class1') {
-    queryString += ' WHERE Rating = \'Hot\' AND Type = \'Prospect\'';
+	queryString += ' WHERE Rating = \'Hot\' AND Type = \'Prospect\'';
 } else if (accountClass == 'Class2') {
-    queryString += ' WHERE Rating = \'Warm\' AND Type = \'Other\'';
+	queryString += ' WHERE Rating = \'Warm\' AND Type = \'Other\'';
 } else {
-    queryString += ' WHERE Rating = \'Hot\'';
+	queryString += ' WHERE Rating = \'Hot\'';
 }
 
 List <Account> accounts = Database.query(queryString);
@@ -683,12 +683,12 @@ account.Rating = 'Hot';
 // insert account;
 
 List<Account> accounts = new List<Account> {
-    new Account(Name = 'TCS', Phone = '9988776655', Rating = 'Warm'),
-    new Account(Name = 'HCL', Phone = '9988776677', Rating = 'Cold'),    
-    new Account(Name = 'InfoSys', Phone = '9988998899', Rating = 'Hot'),
-    account,
-    // Invalid Account
-    new Account()
+	new Account(Name = 'TCS', Phone = '9988776655', Rating = 'Warm'),
+	new Account(Name = 'HCL', Phone = '9988776677', Rating = 'Cold'),    
+	new Account(Name = 'InfoSys', Phone = '9988998899', Rating = 'Hot'),
+	account,
+	// Invalid Account
+	new Account()
 };
 
 // Insert Accounts
@@ -697,13 +697,13 @@ List<Account> accounts = new List<Account> {
 Database.SaveResult[] saveResults = Database.insert(accounts, false);
 
 for (Database.SaveResult saveResult : saveResults) {
-    if (saveResult.isSuccess()) {
-        System.debug('Row With Id: ' + saveResult.getId() + ' Successfully Inserted.');
-    } else {
-        for (Database.Error error : saveResult.getErrors()) {
-            System.debug(error.getStatusCode() + ': ' + error.getMessage());
-        }
-    }
+	if (saveResult.isSuccess()) {
+		System.debug('Row With Id: ' + saveResult.getId() + ' Successfully Inserted.');
+	} else {
+		for (Database.Error error : saveResult.getErrors()) {
+			System.debug(error.getStatusCode() + ': ' + error.getMessage());
+		}
+	}
 }
 
 // Difference
@@ -715,32 +715,32 @@ for (Database.SaveResult saveResult : saveResults) {
 ### Simple Account Controller
 ```apex
 public class AccountController {
-    public static List<Account> insertAccounts(List<Account> accounts) {
-        insert accounts;
-        return accounts;
-    }
-    
-    public static Account insertAccount(Account account) {
-        insert account;
-        return account;
-    }
-    
-    public static List<Account> getAllAccounts() {
-        List<Account> accounts = [SELECT Name, Phone FROM Account];
-        return accounts;
-    }
-    
-    public static void printAllAccounts() {
-        List<Account> accounts = getAllAccounts();
-        
-        for (Account account : accounts) {
-        	System.debug('Account Name: ' + account.Name + ', Account Phone: ' + account.Phone);   
-        }
-    }
-    
-    public static Integer getAccountSize() {
-        return getAllAccounts().size();
-    }
+	public static List<Account> insertAccounts(List<Account> accounts) {
+		insert accounts;
+		return accounts;
+	}
+	
+	public static Account insertAccount(Account account) {
+		insert account;
+		return account;
+	}
+	
+	public static List<Account> getAllAccounts() {
+		List<Account> accounts = [SELECT Name, Phone FROM Account];
+		return accounts;
+	}
+	
+	public static void printAllAccounts() {
+		List<Account> accounts = getAllAccounts();
+		
+		for (Account account : accounts) {
+			System.debug('Account Name: ' + account.Name + ', Account Phone: ' + account.Phone);   
+		}
+	}
+	
+	public static Integer getAccountSize() {
+		return getAllAccounts().size();
+	}
 }
 ```
 ### Update Operation
@@ -750,8 +750,8 @@ AccountController.insertAccount(account);
 
 List<Account> accounts = [SELECT Id, Name, Phone FROM Account WHERE Name = 'TCS' AND Phone = '9988776655'];
 for (Account account : accounts) {
-    account.Name = 'Tata Consultancy Services';
-    account.Rating = 'Hot';
+	account.Name = 'Tata Consultancy Services';
+	account.Rating = 'Hot';
 }
 // Update All Accounts In List
 update accounts;
@@ -779,26 +779,26 @@ undelete deletedAccounts;
 List<SObject> accounts = [SELECT Id, Name, Phone FROM Account];
 
 for (SObject account : accounts) {
-    System.debug('Account Name: ' + (String)account.get('Name') + ', Account Phone: ' + (String)account.get('Phone'));
+	System.debug('Account Name: ' + (String)account.get('Name') + ', Account Phone: ' + (String)account.get('Phone'));
 }
 
 List<SObject> contacts = [SELECT Name, Email, Account.Name FROM Contact];
 // Access Parent From Child
 // Using SObject.getSObject('Parent Relationship').get('Field')
 for (SObject contact : contacts) {
-    System.debug('Contact Name: ' + contact.get('Name') + ', Contact Email: ' + contact.get('Email') + ', Account Name: ' + contact.getSObject('Account').get('Name'));
+	System.debug('Contact Name: ' + contact.get('Name') + ', Contact Email: ' + contact.get('Email') + ', Account Name: ' + contact.getSObject('Account').get('Name'));
 }
 
 // Access Child From Parent
 List<SObject> accounts = [SELECT Name, Website, (SELECT Name, Email FROM Contacts) FROM Account];
 for (SObject account : accounts) {
-    System.debug('Account Name: ' + account.get('Name') + ', Account Website: ' + account.get('Website'));
-    SObject[] contacts = account.getSObjects('Contacts');
-    if (contacts != null) {
-    	for (SObject contact : contacts) {
-        	System.debug('Contact Name: ' + contact.get('Name') + ', Contact Email: ' + contact.get('Email'));
-    	}
-    }
+	System.debug('Account Name: ' + account.get('Name') + ', Account Website: ' + account.get('Website'));
+	SObject[] contacts = account.getSObjects('Contacts');
+	if (contacts != null) {
+		for (SObject contact : contacts) {
+			System.debug('Contact Name: ' + contact.get('Name') + ', Contact Email: ' + contact.get('Email'));
+		}
+	}
 }
 
 // Create New SObject Instance
@@ -884,7 +884,7 @@ public class OpportunityController {
 // Execute Anonymous
 List<Id> opportunityIds = new List<Id>();
 for (Opportunity opportunity : [SELECT Id FROM Opportunity]) {
-    opportunityIds.add(opportunity.Id);
+	opportunityIds.add(opportunity.Id);
 }
 
 System.debug(opportunityIds);
@@ -961,21 +961,25 @@ for (AggregateResult result : results) {
 ---
 ## Apex Triggers
 ```apex
-trigger LeadTrigger on Lead (before insert, before update) {
-    // System.debug('Lead Trigger Called.');
-    for (Lead leadRecord : Trigger.new) {
-        if (String.isBlank(leadRecord.LeadSource)) {
-            leadRecord.LeadSource = 'Other';
-        }
-        
-        if (String.isBlank(leadRecord.Industry)) {
-            leadRecord.addError('The industry field cannot be blank');
-        }
-    }
+trigger LeadTrigger on Lead (before insert, before update, after update) {
+	for (Lead leadRecord : Trigger.new) {
+		if (Trigger.isBefore && String.isBlank(leadRecord.LeadSource)) {
+			leadRecord.LeadSource = 'Other';
+		}
+		
+		if (Trigger.isInsert && String.isBlank(leadRecord.Industry)) {
+			leadRecord.addError('The industry field cannot be blank');
+		}
+		
+		if ((leadRecord.Status == 'Closed - Converted' || leadRecord.Status == 'Closed - Not Converted')
+			&& Trigger.oldMap.get(leadRecord.Id).Status == 'Open - Not Contacted') {
+				leadRecord.Status.addError('You cannot directly close an open lead record.');
+		}
+	}
 }
 ```
 * Supported Operations:
-    1. Before And After Insert
+	1. Before And After Insert
 	2. Before And After Delete
 	3. Before And After Update
 	3. After Undelete
@@ -995,3 +999,34 @@ trigger LeadTrigger on Lead (before insert, before update) {
 	11. isExecuting - Return true if current context of apex code is a trigger.
 	12. size - total number of records in trigger invocation (both new and old).
 	13. operationType - Enum corresponding to current operation (BEFORE_UPDATE, AFTER_DELETE, etc).
+
+```apex
+trigger LeadTrigger on Lead (before insert, before update, after update) {
+	
+	switch on Trigger.operationType {
+		when BEFORE_INSERT {
+			for (Lead leadRecord : Trigger.new) {
+				if (String.isBlank(leadRecord.LeadSource)) {
+					leadRecord.LeadSource = 'Other';
+				}
+				
+				if (String.isBlank(leadRecord.Industry)) {
+					leadRecord.addError('The industry field cannot be blank');
+				}
+			}
+		}
+		
+		when BEFORE_UPDATE {
+			for (Lead leadRecord : Trigger.new) {
+			   	if (String.isBlank(leadRecord.LeadSource)) {
+					leadRecord.LeadSource = 'Other';
+				}
+				if ((leadRecord.Status == 'Closed - Converted' || leadRecord.Status == 'Closed - Not Converted')
+					&& Trigger.oldMap.get(leadRecord.Id).Status == 'Open - Not Contacted') {
+						leadRecord.Status.addError('You cannot directly close an open lead record.');
+				}
+			}
+		}
+	}
+}
+```
