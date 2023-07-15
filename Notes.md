@@ -940,4 +940,22 @@ SELECT AVG(Amount) FROM Opportunity
 SELECT MIN(Amount) FROM Opportunity
 SELECT SUM(Amount) FROM Opportunity
 SELECT COUNT_DISTINCT(Name) FROM Account
+
+-- Group By (Must Be Used With Aggregate)
+SELECT StageName, COUNT(Id) FROM Opportunity GROUP BY StageName
+SELECT StageName, COUNT(Id), MAX(Amount), MIN(Amount), AVG(Amount) FROM Opportunity GROUP BY StageName
+
+-- Having Clause (Used In Conjunction With Aggregate Functions)
+SELECT StageName, SUM(Amount) FROM Opportunity GROUP BY StageName HAVING SUM(Amount) > 300000
 ```
+#### Aggregate Functions In Apex
+```apex
+AggregateResult[] results = [SELECT StageName, AVG(Amount) AvgAmount, MAX(Amount) MaxAmount FROM Opportunity GROUP BY StageName];
+	
+for (AggregateResult result : results) {
+	System.debug('Stage Name: ' + result.get('StageName') 
+		+ ', Average Amount: ' + result.get('AvgAmount')
+		+ ', Maximum Amount: ' + result.get('MaxAmount'));
+}
+```
+
