@@ -988,3 +988,7 @@ trigger LeadTrigger on Lead (before insert, before update) {
 	4. isUndelete - True if trigger was fired due to undelete operation.
 	5. isBefore - True if trigger was fired before an operation.
 	6. isAfter - True if trigger was fired after an operation.
+	7. new - List of new versions of the record.
+	8. old - List of old versions of the record.
+	9. newMap - Map of Id-SObject of new versions of the record.
+	10. oldMap - Map of Id-SObject of old versions of the record.
