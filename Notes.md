@@ -958,4 +958,5 @@ for (AggregateResult result : results) {
 		+ ', Maximum Amount: ' + result.get('MaxAmount'));
 }
 ```
-
+---
+## Apex Triggers
