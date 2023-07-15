@@ -970,3 +970,9 @@ trigger LeadTrigger on Lead (before insert) {
     }
 }
 ```
+* Supported Operations:
+    1. Before And After Insert
+	2. Before And After Delete
+	3. Before And After Update
+	3. After Undelete
+
