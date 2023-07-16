@@ -1029,3 +1029,5 @@ trigger LeadTrigger on Lead (before insert, before update, after update) {
 	}
 }
 ```
+### Order Of Execution
+![Order Of Execution](images/order-of-execution.png)
