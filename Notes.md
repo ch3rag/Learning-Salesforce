@@ -999,6 +999,7 @@ trigger LeadTrigger on Lead (before insert, before update, after update) {
 	11. isExecuting - Return true if current context of apex code is a trigger.
 	12. size - total number of records in trigger invocation (both new and old).
 	13. operationType - Enum corresponding to current operation (BEFORE_UPDATE, AFTER_DELETE, etc).
+* Before trigger can be used to validate or update values before they are inserted in the database, whereas an update trigger is used to make changes in related records after insertion. Note that the record in an update trigger is read only.
 
 ```apex
 trigger LeadTrigger on Lead (before insert, before update, after update) {
